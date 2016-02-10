@@ -40,7 +40,7 @@ class TipCalculatorModel {
    
   }
     
-    func loginTapped(){
+    func loginTapped(appcode: String, username: String, password: String){
         let data = getJSON("http://jsonplaceholder.typicode.com/posts/1")
         print(data)
         let dictData = parseJSON(data)

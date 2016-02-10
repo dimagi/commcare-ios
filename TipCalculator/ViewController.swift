@@ -11,9 +11,6 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet var totalTextField : UITextField!
-  @IBOutlet var taxPctSlider : UISlider!
-  @IBOutlet var taxPctLabel : UILabel!
-  @IBOutlet var resultsTextView : UITextView!
     
     @IBOutlet var appCode: UITextField!
     @IBOutlet var username: UITextField!
@@ -36,16 +33,14 @@ class ViewController: UIViewController {
   }
   
   @IBAction func loginTapped(sender : AnyObject) {
-    tipCalc.loginTapped()
+    let user = username.text!
+    let pass = password.text!
+    let code = appCode.text!
+    tipCalc.loginTapped(code, username: user, password:pass)
   }
 
-  @IBAction func taxPercentageChanged(sender : AnyObject) {
-    tipCalc.taxPct = Double(taxPctSlider.value) / 100.0
-    refreshUI()
-  }
-  
   @IBAction func viewTapped(sender : AnyObject) {
-    totalTextField.resignFirstResponder()
+    //totalTextField.resignFirstResponder()
   }
   
 }

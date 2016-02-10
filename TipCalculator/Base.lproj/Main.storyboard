@@ -76,7 +76,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="WmL-ou-44l"/>
                     <connections>
-                        <outlet property="resultsTextView" destination="6zQ-sp-vsi" id="7t1-o4-gRO"/>
+                        <outlet property="appCode" destination="apJ-L6-mMq" id="qt2-Zm-StY"/>
+                        <outlet property="password" destination="0bW-Os-W2d" id="dJv-z5-2NE"/>
+                        <outlet property="username" destination="cfY-ta-7GD" id="BhY-qT-4bm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
