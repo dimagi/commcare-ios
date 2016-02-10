@@ -40,11 +40,14 @@ class TipCalculatorModel {
    
   }
     
-    func loginTapped(appcode: String, username: String, password: String){
-        let data = getJSON("http://jsonplaceholder.typicode.com/posts/1")
-        print(data)
-        let dictData = parseJSON(data)
-        print(dictData)
+    func loginTapped(appcode: String, username: String, password: String, domain: String){
+        let json = [ "username":username , "password": password, "domain": domain, "install_reference":appcode ]
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            print(jsonData)
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     func getJSON(urlToRequest: String) -> NSData{
@@ -61,8 +64,4 @@ class TipCalculatorModel {
         }
         return nil
     }
-
-
-
-
 }
