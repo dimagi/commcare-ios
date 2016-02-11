@@ -1,6 +1,6 @@
 //
 //  Question.swift
-//  TipCalculator
+//  CommCare
 //
 //  Created by Will Pride on 2/11/16.
 //  Copyright © 2016 Razeware LLC. All rights reserved.

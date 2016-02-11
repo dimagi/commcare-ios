@@ -67,9 +67,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-i1-oLw">
-                                <rect key="frame" x="0.0" y="72" width="370" height="66"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWA-GS-bI9">
                                 <rect key="frame" x="342" y="637" width="30" height="30"/>
                                 <connections>
@@ -77,6 +74,9 @@
                                     <segue destination="aXj-cd-poH" kind="show" identifier="loginToMenu" id="d94-Nt-F9L"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-i1-oLw">
+                                <rect key="frame" x="0.0" y="72" width="370" height="66"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>

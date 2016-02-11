@@ -1,9 +1,6 @@
 //
 //  ViewController.swift
-//  TipCalculator
-//
-//  Created by Main Account on 9/15/15.
-//  Copyright © 2015 Razeware LLC. All rights reserved.
+//  CommCare
 //
 
 import UIKit
