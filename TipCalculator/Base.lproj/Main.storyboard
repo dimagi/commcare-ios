@@ -7,7 +7,7 @@
         <!--CommCare iOS-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="CommCare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -105,7 +105,7 @@
         <!--Module-->
         <scene sceneID="lKP-Zi-gjw">
             <objects>
-                <viewController title="Module" id="aXj-cd-poH" customClass="ModuleController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Module" id="aXj-cd-poH" customClass="ModuleController" customModule="CommCare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m9A-fk-QQc"/>
                         <viewControllerLayoutGuide type="bottom" id="7zg-7M-Pju"/>
@@ -161,7 +161,7 @@
         <!--Form-->
         <scene sceneID="TCq-Px-gL8">
             <objects>
-                <viewController title="Form" id="hEg-VX-gLA" customClass="FormController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Form" id="hEg-VX-gLA" customClass="FormController" customModule="CommCare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hKl-Js-vFY"/>
                         <viewControllerLayoutGuide type="bottom" id="1hb-Gq-1sB"/>
@@ -199,7 +199,7 @@
         <!--Form Entry Controller-->
         <scene sceneID="sHf-Em-KfS">
             <objects>
-                <viewController id="DHE-Gd-rsw" customClass="FormEntryController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DHE-Gd-rsw" customClass="FormEntryController" customModule="CommCare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lbz-cL-kgi"/>
                         <viewControllerLayoutGuide type="bottom" id="o6a-CG-9HA"/>
@@ -249,7 +249,7 @@
         <!--Submit Controller-->
         <scene sceneID="Xq0-8u-lMe">
             <objects>
-                <viewController id="REJ-zM-sfk" customClass="SubmitController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="REJ-zM-sfk" customClass="SubmitController" customModule="CommCare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UyJ-t6-tlA"/>
                         <viewControllerLayoutGuide type="bottom" id="cdw-yu-XQN"/>
