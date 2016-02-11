@@ -11,10 +11,10 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-class ModuleController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FormController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var jsonResponseText = "module null"
-    var jsonNext = "next null"
+    var jsonPrevious = "form prev null"
+    var jsonNext = "form next null"
     var sessionId = "sessionId"
     var moduleDictionary: [String:String] = [:]
     var count = 0
@@ -22,15 +22,16 @@ class ModuleController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet var tableView: UITableView!
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "moduleToForm") {
-            let viewController:FormController = segue!.destinationViewController as! FormController
+        print("FormMenu prep segue")
+        if (segue.identifier == "startFormEntry") {
+            let viewController:FormEntryController = segue!.destinationViewController as! FormEntryController
             viewController.jsonPrevious = jsonNext
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let dataFromString = jsonResponseText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+        if let dataFromString = jsonPrevious.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
             let json = JSON(data: dataFromString)
             sessionId = json["session_id"].stringValue
             for(key, value):(String, JSON) in json["options"] {
@@ -90,8 +91,8 @@ class ModuleController: UIViewController, UITableViewDataSource, UITableViewDele
                     // handle the results as JSON, without a bunch of nested if loops
                     let post = JSON(value)
                     self.jsonNext = post.description
-                    print("Next JSON: " + self.jsonNext)
-                    self.performSegueWithIdentifier("moduleToForm", sender: sender)
+                    print("Form Next JSON: " + self.jsonNext)
+                    self.performSegueWithIdentifier("startFormEntry", sender: sender)
                 }
         }
     }

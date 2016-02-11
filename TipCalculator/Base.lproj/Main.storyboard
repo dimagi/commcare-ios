@@ -115,13 +115,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="evb-Zu-fVW">
+                                <rect key="frame" x="2" y="72" width="370" height="66"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lC7-SX-qzB">
+                                <rect key="frame" x="341" y="646" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="hEg-VX-gLA" kind="show" identifier="moduleToForm" id="mwf-1Z-lm9"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iOG-N3-8mJ">
                                 <rect key="frame" x="0.0" y="146" width="375" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="evb-Zu-fVW">
-                                <rect key="frame" x="2" y="72" width="370" height="66"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -152,6 +159,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDb-Fg-Rk5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="206" y="961"/>
+        </scene>
+        <!--Form-->
+        <scene sceneID="TCq-Px-gL8">
+            <objects>
+                <viewController title="Form" id="hEg-VX-gLA" customClass="FormController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hKl-Js-vFY"/>
+                        <viewControllerLayoutGuide type="bottom" id="1hb-Gq-1sB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zy7-BE-gOp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iuX-rx-jO5">
+                                <rect key="frame" x="0.0" y="146" width="375" height="513"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXd-Ge-JJw">
+                                <rect key="frame" x="336" y="647" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="DHE-Gd-rsw" kind="show" identifier="startFormEntry" id="MzV-mu-t3e"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="QC8-d2-ndI">
+                                <rect key="frame" x="2" y="72" width="370" height="66"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="iuX-rx-jO5" id="IRN-zg-Mfr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhi-gl-ux7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="e3d-f6-FD5"/>
+            </objects>
+            <point key="canvasLocation" x="2218.5" y="300.5"/>
+        </scene>
+        <!--Form Entry Controller-->
+        <scene sceneID="sHf-Em-KfS">
+            <objects>
+                <viewController id="DHE-Gd-rsw" customClass="FormEntryController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lbz-cL-kgi"/>
+                        <viewControllerLayoutGuide type="bottom" id="o6a-CG-9HA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qte-6q-S6g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="sfk-Ys-DDc">
+                                <rect key="frame" x="2" y="72" width="370" height="66"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fsV-jb-b7Z">
+                                <rect key="frame" x="2" y="184" width="370" height="449"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMW-ZC-qOe">
+                                <rect key="frame" x="163" y="637" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xu-Dk-ify">
+                                <rect key="frame" x="20" y="155" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="formStack" destination="fsV-jb-b7Z" id="aIJ-cn-5fG"/>
+                        <outlet property="submitButton" destination="PMW-ZC-qOe" id="rcv-ew-l7R"/>
+                        <outlet property="titleView" destination="2Xu-Dk-ify" id="5lD-cr-Nre"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K04-IP-j91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2707.5" y="300.5"/>
         </scene>
     </scenes>
     <resources>
