@@ -22,9 +22,6 @@ class LoginController: UIViewController {
     
   var jsonResponse = "null"
  
-  func refreshUI() {
-  }
-    
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if (segue.identifier == "loginToMenu") {
             let viewController:ModuleController = segue!.destinationViewController as! ModuleController
@@ -34,8 +31,7 @@ class LoginController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    refreshUI()
+
   }
   
   override func didReceiveMemoryWarning() {

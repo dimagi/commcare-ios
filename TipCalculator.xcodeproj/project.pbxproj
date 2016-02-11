@@ -14,6 +14,9 @@
 		35F463AA1BA8773400A6E84B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35F463A81BA8773400A6E84B /* LaunchScreen.storyboard */; };
 		722653F31C6D19B00064754E /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722653F21C6D19B00064754E /* FormController.swift */; };
 		722654011C6D1F0F0064754E /* FormEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722654001C6D1F0F0064754E /* FormEntryController.swift */; };
+		722654031C6D22B70064754E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722654021C6D22B70064754E /* Question.swift */; };
+		722654051C6D27070064754E /* QuestionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722654041C6D27070064754E /* QuestionWidget.swift */; };
+		722654071C6D3D620064754E /* SubmitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722654061C6D3D620064754E /* SubmitController.swift */; };
 		72A839071C6BCC790078E908 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A838FA1C6BCC6D0078E908 /* Alamofire.framework */; };
 		72A839081C6BCC790078E908 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 72A838FA1C6BCC6D0078E908 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		72E7A79B1C6CD6D700AC1BB4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E7A78E1C6CD6CD00AC1BB4 /* SwiftyJSON.framework */; };
@@ -162,6 +165,9 @@
 		35F463AB1BA8773400A6E84B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		722653F21C6D19B00064754E /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
 		722654001C6D1F0F0064754E /* FormEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormEntryController.swift; sourceTree = "<group>"; };
+		722654021C6D22B70064754E /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		722654041C6D27070064754E /* QuestionWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionWidget.swift; sourceTree = "<group>"; };
+		722654061C6D3D620064754E /* SubmitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitController.swift; sourceTree = "<group>"; };
 		72A838EF1C6BCC6D0078E908 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		72E7A77D1C6CD6CD00AC1BB4 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		72E7A7A01C6CE73900AC1BB4 /* ccbanner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbanner.png; sourceTree = "<group>"; };
@@ -212,6 +218,9 @@
 				72E7A7A21C6CF1F800AC1BB4 /* ModuleController.swift */,
 				722653F21C6D19B00064754E /* FormController.swift */,
 				722654001C6D1F0F0064754E /* FormEntryController.swift */,
+				722654041C6D27070064754E /* QuestionWidget.swift */,
+				722654021C6D22B70064754E /* Question.swift */,
+				722654061C6D3D620064754E /* SubmitController.swift */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -438,9 +447,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				35F463A21BA8773400A6E84B /* LoginController.swift in Sources */,
+				722654071C6D3D620064754E /* SubmitController.swift in Sources */,
 				35F463A01BA8773400A6E84B /* AppDelegate.swift in Sources */,
 				72E7A7A31C6CF1F800AC1BB4 /* ModuleController.swift in Sources */,
+				722654031C6D22B70064754E /* Question.swift in Sources */,
 				722653F31C6D19B00064754E /* FormController.swift in Sources */,
+				722654051C6D27070064754E /* QuestionWidget.swift in Sources */,
 				722654011C6D1F0F0064754E /* FormEntryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
