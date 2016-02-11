@@ -20,9 +20,6 @@ class LoginController: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
     
-    
-  let tipCalc = TipCalculatorModel(total: 33.25, taxPct: 0.06)
-    
   var jsonResponse = "null"
  
   func refreshUI() {
@@ -63,21 +60,7 @@ class LoginController: UIViewController {
   @IBAction func viewTapped(sender : AnyObject) {
     //totalTextField.resignFirstResponder()
   }
-    
-    func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
-    }
-    
-    func parseJSON(inputData: NSData) -> NSDictionary?{
-        var _: NSError?
-        do{
-            let boardsDictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-            return boardsDictionary
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        return nil
-    }
+
     
     func postJson(url: String, jsonBody: [String: AnyObject], sender : AnyObject){
         let postsEndpoint: String = "http://localhost:8080/" + url

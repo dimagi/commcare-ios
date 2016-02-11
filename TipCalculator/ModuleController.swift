@@ -9,10 +9,12 @@
 import UIKit
 import Foundation
 import SwiftyJSON
+import Alamofire
 
-class ModuleController: UIViewController, UITableViewDataSource {
+class ModuleController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var jsonResponseText = "module null"
+    var sessionId = "sessionId"
     var moduleDictionary: [String:String] = [:]
     var count = 0
     
@@ -22,10 +24,7 @@ class ModuleController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         if let dataFromString = jsonResponseText.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
             let json = JSON(data: dataFromString)
-            print ("options")
-            print (json["options"])
-            print ("sessionid")
-            print(json["session_id"])
+            sessionId = json["session_id"].stringValue
             for(key, value):(String, JSON) in json["options"] {
                 print("key: " + key)
                 print(value)
@@ -36,6 +35,7 @@ class ModuleController: UIViewController, UITableViewDataSource {
             
         }
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +50,40 @@ class ModuleController: UIViewController, UITableViewDataSource {
         label.text = moduleDictionary[stringRow]
         cell.addSubview(label)
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Path click: " + String(indexPath.row))
+        rowClicked(String(indexPath.row))
+    }
+    
+    func rowClicked(index: String){
+        let json: [String: AnyObject] = [ "selection":index, "session_id": sessionId]
+        do{
+            postJson("menu_select", jsonBody: json)
+            print(json)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    func postJson(url: String, jsonBody: [String: AnyObject]){
+        let postsEndpoint: String = "http://localhost:8080/" + url
+        Alamofire.request(.POST, postsEndpoint, parameters: jsonBody, encoding: .JSON)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling GET on /posts/1")
+                    print(response.result.error!)
+                    return
+                }
+                
+                if let value: AnyObject = response.result.value {
+                    // handle the results as JSON, without a bunch of nested if loops
+                    let post = JSON(value)
+                    print("Response: " + post.description)
+                }
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -45,27 +45,11 @@ class TipCalculatorModel {
     func loginTapped(appcode: String, username: String, password: String, domain: String){
         let json: [String: AnyObject] = [ "username":username , "password": password, "domain": domain, "install_reference":appcode ]
         do{
-            //let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
             postJson("install", jsonBody: json)
             print(json)
         } catch let error as NSError {
             print(error)
         }
-    }
-    
-    func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
-    }
-    
-    func parseJSON(inputData: NSData) -> NSDictionary?{
-        var _: NSError?
-        do{
-            let boardsDictionary: NSDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-            return boardsDictionary
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        return nil
     }
     
     func postJson(url: String, jsonBody: [String: AnyObject]){
