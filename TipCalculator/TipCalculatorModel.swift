@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class TipCalculatorModel {
 
@@ -41,10 +43,11 @@ class TipCalculatorModel {
   }
     
     func loginTapped(appcode: String, username: String, password: String, domain: String){
-        let json = [ "username":username , "password": password, "domain": domain, "install_reference":appcode ]
+        let json: [String: AnyObject] = [ "username":username , "password": password, "domain": domain, "install_reference":appcode ]
         do{
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
-            print(jsonData)
+            //let jsonData = try NSJSONSerialization.dataWithJSONObject(json, options: .PrettyPrinted)
+            postJson("install", jsonBody: json)
+            print(json)
         } catch let error as NSError {
             print(error)
         }
@@ -63,5 +66,24 @@ class TipCalculatorModel {
             print(error.localizedDescription)
         }
         return nil
+    }
+    
+    func postJson(url: String, jsonBody: [String: AnyObject]){
+        let postsEndpoint: String = "http://localhost:8080/" + url
+        Alamofire.request(.POST, postsEndpoint, parameters: jsonBody, encoding: .JSON)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling GET on /posts/1")
+                    print(response.result.error!)
+                    return
+                }
+                
+                if let value: AnyObject = response.result.value {
+                    // handle the results as JSON, without a bunch of nested if loops
+                    let post = JSON(value)
+                    print("The post is: " + post.description)
+                }
+        }
     }
 }
