@@ -82,7 +82,7 @@ class TipCalculatorModel {
                 if let value: AnyObject = response.result.value {
                     // handle the results as JSON, without a bunch of nested if loops
                     let post = JSON(value)
-                    print("The post is: " + post.description)
+                    print("Response: " + post.description)
                 }
         }
     }

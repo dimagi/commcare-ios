@@ -2,13 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hM8-JV-chk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--CommCare iOS-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -71,19 +70,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ccbanner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-i1-oLw">
                                 <rect key="frame" x="0.0" y="72" width="370" height="66"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zQ-sp-vsi">
-                                <rect key="frame" x="114" y="386" width="373" height="76"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWA-GS-bI9">
+                                <rect key="frame" x="334" y="637" width="45" height="30"/>
+                                <state key="normal" title="Secret"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7K-HW-VUo"/>
+                                    <segue destination="aXj-cd-poH" kind="show" identifier="loginToMenu" id="d94-Nt-F9L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="6zQ-sp-vsi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BkP-yK-mj5"/>
-                            <constraint firstItem="6zQ-sp-vsi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="aru-Ig-MWK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6zQ-sp-vsi" secondAttribute="bottom" constant="8" symbolic="YES" id="mhf-qs-mR9"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bXX-ab-PP8" appends="YES" id="qSy-w7-wUj"/>
                         </connections>
@@ -104,7 +101,39 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1172.5" y="300.5"/>
+            <point key="canvasLocation" x="1176.5" y="300.5"/>
+        </scene>
+        <!--Module-->
+        <scene sceneID="lKP-Zi-gjw">
+            <objects>
+                <viewController title="Module" id="aXj-cd-poH" customClass="ModuleController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m9A-fk-QQc"/>
+                        <viewControllerLayoutGuide type="bottom" id="7zg-7M-Pju"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NZP-fc-gJf" customClass="ModuleController">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cwI-OF-BEm">
+                                <rect key="frame" x="67" y="124" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textView" destination="cwI-OF-BEm" id="5N0-RE-aBk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bc2-Bv-hPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ube-44-qIc"/>
+            </objects>
+            <point key="canvasLocation" x="1743.5" y="300.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Myp-pc-wMb">
